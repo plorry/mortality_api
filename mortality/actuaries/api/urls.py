@@ -5,6 +5,6 @@ from actuaries.api.resources import ActuaryViewSet
 router = routers.DefaultRouter()
 router.register(r'actuaries', ActuaryViewSet)
 
-urlpatters = [
+urlpatterns = [
     url(r'^', include(router.urls)),
 ]
