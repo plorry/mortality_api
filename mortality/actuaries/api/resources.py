@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from actuaries.renderers import AttributionRenderer
+from actuaries.api.renderers import AttributionRenderer
 from actuaries.models import Actuary
 from actuaries.api.serializers import ActuarySerializer
 
@@ -18,12 +18,3 @@ class ActuaryViewSet(viewsets.ReadOnlyModelViewSet):
         queryset = queryset.filter(**query_dict)
 
         return queryset
-
-    def list(self, request, *args, **kwargs):
-        thing = super(ActuaryViewSet, self).list(request, *args, **kwargs)
-        # print(thing.__dict__)
-        return thing
-
-    def get(self, request, *args, **kwargs):
-        print('gggg')
-        return super(ActuaryViewSet, self).get(request, *args, **kwargs)
